@@ -1,7 +1,7 @@
 package example.other
 
 fun main(args: Array<String>) {
-    KotlinOtherExamples().addingToMap()
+    KotlinOtherExamples().filtering()
 }
 
 class KotlinOtherExamples {
@@ -82,6 +82,30 @@ class KotlinOtherExamples {
         println(map)
         map["b"] = 2
         println(map)
+    }
+
+    fun filtering() {
+        val list = listOf("a", "b", 5, 8, true, false)
+
+        val notStringList = list.filterNot { it is String }
+        println("all elements not string in list: $notStringList")
+
+        val evenIndices = list.filterIndexed { index, _ -> index % 2 == 0 }
+        println("even indices are: $evenIndices")
+
+        val stringList = list.filterIsInstance(String::class.java)
+        println("all strings in list: $stringList")
+
+        val map = mapOf("a" to 1, "b" to 2, "c" to 3)
+
+        val aMap = map.filterKeys { it == "a" }
+        println("a: $aMap")
+
+        val threeMap = map.filterValues { it == 3 }
+        println("3: $threeMap")
+
+        val notA = map.filterNot { it.key == "a" }
+        println("not a: $notA")
     }
 
 }
