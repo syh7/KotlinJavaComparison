@@ -7,8 +7,16 @@ fun main(args: Array<String>) {
 class KotlinMutabilityExample {
 
     fun example() {
-        val list: List<String> = listOf("string")
-        val map: Map<String, Int> = mapOf("str" to 1, "ing" to 2)
+        var x = 5
+        val list = mutableListOf("string")
+        val notMutable = mapOf("str" to 1, "ing" to 2)
+        val map = notMutable.toMutableMap()
+
+        x = 4
+        list.add("new str")
+        map["add"] = 3
+        println("mutable $map")
+        println("not mutable $notMutable")
     }
 
 }

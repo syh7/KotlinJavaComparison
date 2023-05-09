@@ -19,7 +19,7 @@ class KotlinListExample {
 //        animalList = catList
 
 //        fillList(catList)
-        fillList(animalList)
+//        fillList(animalList)
     }
 
     private fun fillList(list: MutableList<Animal>) {

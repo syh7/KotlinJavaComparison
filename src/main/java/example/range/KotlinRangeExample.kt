@@ -7,7 +7,7 @@ fun main(args: Array<String>) {
 class KotlinRangeExample {
 
     fun example() {
-        for (i in (1..10).filter { it % 2 == 0 }) {
+        for (i in 1..10) {
             println(i)
         }
     }
